@@ -175,13 +175,13 @@ Source: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-s
 15. Install system monitor
 	* Install glances
 	
-	"sudo apt-get install glances"
+		"sudo apt-get install glances"
 	* To start this system monitor program just type from the command line:
 	
-	"glances"
+		"glances"
 	* To know more about the programs options:
 	
-	"glances -h"
+		"glances -h"
 
 16. Check for other errors:
 	* There may be other erros which come up in the code, for example for the Facebook login, it is necessary to include the IPADDRESS and Application URL are included in the valid OAuth Redirect URIs.
