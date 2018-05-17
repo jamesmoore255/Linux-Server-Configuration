@@ -2,6 +2,12 @@
 
 ## Linux Server Configuration
 
+### *Goals*
+
+* Take a baseline installation of a Linux distribution on a virtual machine and prepare it to host your web applications, to include installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
+* The item deployed on the linux server will be the [Catalog_Progect](https://github.com/jamesmoore255/Catalog_Project)
+
+
 ### *Project Details*
 ##### Preparing and configuring a Linux Server, and deploying a Flask based Python application using postgreSQL, Facebook SignIn, Ubuntu. Also configuring a new user named grader with sudo permission.
 * IP address: 54.238.25.234
@@ -18,6 +24,7 @@
 
 		"sudo nano /etc/ssh/sshd_config"
 	* You will now be able to ssh into the server using port 2200
+Source: [sshd_config Udacity Forums](https://discussions.udacity.com/t/solved-cannot-ssh-into-dev-environment-after-fiddling-with-sshd-config/40049)
 5. Create user 'grader'
 
 		"sudo adduser grader"
@@ -32,6 +39,7 @@
 
 		"sudo dpkg-reconfigure tzdata"
 	* Then choose UTC
+Source: [UbuntuTime](https://help.ubuntu.com/community/UbuntuTime)
 8. Generate a private and public key using the ssh-keygen tool on your local machine
 	* Make a directory within grader called .ssh
 
@@ -98,6 +106,7 @@
 	* Update path of fb_ client_secrets.json file in __init__.py to:
 		
 		"/var/www/catalog/catalog/client_secrets.json"
+Source: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)[DabApps](https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/)
 13. Configure and enable a new virtual host
 		
 		"sudo nano /etc/apache2/sites-available/catalog.conf"
@@ -127,6 +136,7 @@
 	* Enable the virtual host:
 
 		"sudo a2ensite catalog"
+Source: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-run-django-with-mod_wsgi-and-apache-with-a-virtualenv-python-environment-on-a-debian-vps)
 14. Install and configure PostgreSQL
 
 		"sudo apt-get install libpq-dev python-dev"
@@ -160,6 +170,7 @@
 		local   all             all                                     peer
 		host    all             all             127.0.0.1/32            md5
 		host    all             all             ::1/128                 md5
+Source: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
 
 15. Check for other errors:
 	* There may be other erros which come up in the code, for example for the Facebook login, it is necessary to include the IPADDRESS and Application URL are included in the valid OAuth Redirect URIs.
@@ -169,3 +180,5 @@
 		"sudo service apache2 restart"
 
 Visit site at http://54.238.25.234
+
+A big thanks to [iliketomatoes](https://github.com/iliketomatoes) who wrote a very helpful [README](https://github.com/iliketomatoes/linux_server_configuration)
