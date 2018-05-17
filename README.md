@@ -172,10 +172,21 @@ Source: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-r
 		host    all             all             ::1/128                 md5
 Source: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
 
-15. Check for other errors:
+15. Install system monitor
+	* Install glances
+	
+	"sudo apt-get install glances"
+	* To start this system monitor program just type from the command line:
+	
+	"glances"
+	* To know more about the programs options:
+	
+	"glances -h"
+
+16. Check for other errors:
 	* There may be other erros which come up in the code, for example for the Facebook login, it is necessary to include the IPADDRESS and Application URL are included in the valid OAuth Redirect URIs.
 
-16. Restart Apache
+17. Restart Apache
 		
 		"sudo service apache2 restart"
 
